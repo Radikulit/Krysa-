@@ -8,6 +8,7 @@ public class ThrowDices : MonoBehaviour
     public TextMeshProUGUI[] diceTexts;
 
     private int[] diceValues = new int[6];
+    private bool[] lockedDices = new bool[6];
 
     public void Roll()
     { 
