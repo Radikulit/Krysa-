@@ -30,7 +30,10 @@ public class ThrowDices : MonoBehaviour
     }
     public void LockNumber(int i)
     {
-        if (diceValues[i] != 1 && diceValues[i] != 5) return;
+        if (diceValues[i] != 1 && diceValues[i] != 5)
+        {
+            return;
+        }
 
         lockedDices[i] = true;
         diceButtons[i].image.color = new Color(1, 1, 1, 0.5f);
