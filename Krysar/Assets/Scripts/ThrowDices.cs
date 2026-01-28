@@ -3,6 +3,10 @@ using TMPro;
 using UnityEngine.UI;
 public class ThrowDices : MonoBehaviour
 {
+    private ThrowDices()
+    { 
+
+    }
     public TextMeshProUGUI[] diceTexts;
     public Button[] diceButtons;
 
@@ -19,6 +23,7 @@ public class ThrowDices : MonoBehaviour
         }
 
         canRoll = false;
+        bool canLockAnyDice = false;
 
         for (int i = 0; i < 6; i++)
         {
@@ -26,6 +31,16 @@ public class ThrowDices : MonoBehaviour
 
             diceValues[i] = UnityEngine.Random.Range(1, 7);
             diceTexts[i].text = diceValues[i].ToString();
+            if (diceValues[i] == 1 || diceValues[i] == 5) 
+            {
+                canLockAnyDice = true;
+            }
+
+            if (!canLockAnyDice) //nelze nic zamknout
+            {
+                Debug.Log("Nemas co zamknout - tah konci");
+                //ResetTurn(false);
+            }
         }
     }
     public void LockNumber(int i)
@@ -36,7 +51,7 @@ public class ThrowDices : MonoBehaviour
         }
 
         lockedDices[i] = true;
-        diceButtons[i].image.color = new Color(1, 1, 1, 0.5f);
+        diceButtons[i].image.color = new Color(1, 1, 1, 0.5f);//at bude pruhledna
         canRoll = true;
     }
 }
