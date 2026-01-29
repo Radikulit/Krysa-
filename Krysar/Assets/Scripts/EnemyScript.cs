@@ -24,6 +24,6 @@ public class EnemyScript : MonoBehaviour
     }
     private void UpdateHPText()
     {
-        HPCount.text = enemyHp.ToString(":0.0");
+        HPCount.text = enemyHp.ToString(": 0.0");
     }
 }

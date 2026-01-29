@@ -3,27 +3,31 @@ using TMPro;
 using UnityEngine.UI;
 public class ThrowDices : MonoBehaviour
 {
-    private ThrowDices()
-    { 
+    public static ThrowDices Instance;
+    void Awake()
+    {
+        Instance = this;
+    }//Singleton
 
-    }
     public TextMeshProUGUI[] diceTexts;
     public Button[] diceButtons;
+    public Button[] endturnButton;
+    public Image LockDiceImage;
 
     int[] diceValues = new int[6];
     bool[] lockedDices = new bool[6];
     bool canRoll = true;
 
-    public void Roll()
+    public void Roll()//hod kostkamy
     {
         if (!canRoll)
         {
-            Debug.Log("Zamkni kostku");
+            LockDiceImage.gameObject.SetActive(true);
+            Invoke(nameof(HideWarning), 1.5f);
             return;
         }
 
         canRoll = false;
-        bool canLockAnyDice = false;
 
         for (int i = 0; i < 6; i++)
         {
@@ -31,19 +35,9 @@ public class ThrowDices : MonoBehaviour
 
             diceValues[i] = UnityEngine.Random.Range(1, 7);
             diceTexts[i].text = diceValues[i].ToString();
-            if (diceValues[i] == 1 || diceValues[i] == 5) 
-            {
-                canLockAnyDice = true;
-            }
-
-            if (!canLockAnyDice) //nelze nic zamknout
-            {
-                Debug.Log("Nemas co zamknout - tah konci");
-                //ResetTurn(false);
-            }
         }
     }
-    public void LockNumber(int i)
+    public void LockNumber(int i)//odloz kostku
     {
         if (diceValues[i] != 1 && diceValues[i] != 5)
         {
@@ -53,5 +47,13 @@ public class ThrowDices : MonoBehaviour
         lockedDices[i] = true;
         diceButtons[i].image.color = new Color(1, 1, 1, 0.5f);//at bude pruhledna
         canRoll = true;
+    }
+    public void EndTurn()
+    {
+        Debug.Log("XAXAXAXAXAXAXAXAXAXAXAXAXA");
+    }
+    void HideWarning()
+    {
+        LockDiceImage.gameObject.SetActive(false);
     }
 }
