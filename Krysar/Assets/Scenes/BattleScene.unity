@@ -3118,7 +3118,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1404616318}
   m_OnClick:
     m_PersistentCalls:
@@ -3126,7 +3126,7 @@ MonoBehaviour:
       - m_Target: {fileID: 2045813391}
         m_TargetAssemblyTypeName: ThrowDices, Assembly-CSharp
         m_MethodName: EndTurn
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5312,9 +5312,10 @@ MonoBehaviour:
   - {fileID: 652015615}
   - {fileID: 1465001505}
   - {fileID: 1677847209}
-  endturnButton:
-  - {fileID: 1404616317}
+  EndTurnButton: {fileID: 1404616317}
+  RollButton: {fileID: 0}
   LockDiceImage: {fileID: 512017984}
+  EnemyTurnImage: {fileID: 1591713057}
 --- !u!4 &2045813392
 Transform:
   m_ObjectHideFlags: 0

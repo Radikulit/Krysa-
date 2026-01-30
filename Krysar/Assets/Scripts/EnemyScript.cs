@@ -10,11 +10,11 @@ public class EnemyScript : MonoBehaviour
     void Start()
     {
         enemyHp = UnityEngine.Random.Range(10, 16);
-        UpdateHPText();   
+        UpdateHPText(); 
     }
     public void TakeDamage(float damage)
     {
-        if (damage < 0)//osetreni pro decreased text
+        if (damage <= 0)//osetreni pro decreased text
         {
             damage = 0;
             DecreaseHPText.gameObject.SetActive(false);
