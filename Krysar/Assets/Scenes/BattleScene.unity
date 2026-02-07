@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 53291535}
   - component: {fileID: 53291534}
   - component: {fileID: 53291533}
+  - component: {fileID: 53291536}
   m_Layer: 5
   m_Name: Dice2
   m_TagString: Untagged
@@ -251,6 +252,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 53291531}
   m_CullTransparentMesh: 1
+--- !u!114 &53291536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53291531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e15fb4e564b944bb27c08feaa8db1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diceIndex: 2
+  diceManager: {fileID: 2045813391}
 --- !u!1 &78606912
 GameObject:
   m_ObjectHideFlags: 0
@@ -262,6 +277,7 @@ GameObject:
   - component: {fileID: 78606913}
   - component: {fileID: 78606915}
   - component: {fileID: 78606914}
+  - component: {fileID: 78606916}
   m_Layer: 5
   m_Name: EnemyDiceHolder
   m_TagString: Untagged
@@ -291,7 +307,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 135, y: 0}
+  m_AnchoredPosition: {x: 135, y: 335}
   m_SizeDelta: {x: 225, y: 275}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &78606914
@@ -332,6 +348,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 78606912}
   m_CullTransparentMesh: 1
+--- !u!95 &78606916
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78606912}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 82e189b6b3da81a44910bbf960134230, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &135221675
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,6 +879,7 @@ GameObject:
   - component: {fileID: 343615071}
   - component: {fileID: 343615070}
   - component: {fileID: 343615069}
+  - component: {fileID: 343615072}
   m_Layer: 5
   m_Name: Dice1
   m_TagString: Untagged
@@ -961,6 +1000,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343615067}
   m_CullTransparentMesh: 1
+--- !u!114 &343615072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343615067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e15fb4e564b944bb27c08feaa8db1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diceIndex: 1
+  diceManager: {fileID: 2045813391}
 --- !u!1 &512017982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1268,6 +1321,7 @@ GameObject:
   - component: {fileID: 652015617}
   - component: {fileID: 652015616}
   - component: {fileID: 652015615}
+  - component: {fileID: 652015618}
   m_Layer: 5
   m_Name: Dice3
   m_TagString: Untagged
@@ -1388,6 +1442,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652015613}
   m_CullTransparentMesh: 1
+--- !u!114 &652015618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652015613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e15fb4e564b944bb27c08feaa8db1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diceIndex: 3
+  diceManager: {fileID: 2045813391}
 --- !u!1 &663642178
 GameObject:
   m_ObjectHideFlags: 0
@@ -2965,6 +3033,7 @@ GameObject:
   - component: {fileID: 1465001507}
   - component: {fileID: 1465001506}
   - component: {fileID: 1465001505}
+  - component: {fileID: 1465001508}
   m_Layer: 5
   m_Name: Dice4
   m_TagString: Untagged
@@ -3085,6 +3154,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465001503}
   m_CullTransparentMesh: 1
+--- !u!114 &1465001508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465001503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e15fb4e564b944bb27c08feaa8db1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diceIndex: 4
+  diceManager: {fileID: 2045813391}
 --- !u!1 &1475878882
 GameObject:
   m_ObjectHideFlags: 0
@@ -4069,6 +4152,7 @@ GameObject:
   - component: {fileID: 1677847211}
   - component: {fileID: 1677847210}
   - component: {fileID: 1677847209}
+  - component: {fileID: 1677847212}
   m_Layer: 5
   m_Name: Dice5
   m_TagString: Untagged
@@ -4189,6 +4273,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677847207}
   m_CullTransparentMesh: 1
+--- !u!114 &1677847212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677847207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5e15fb4e564b944bb27c08feaa8db1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diceIndex: 5
+  diceManager: {fileID: 2045813391}
 --- !u!1 &1698480709
 GameObject:
   m_ObjectHideFlags: 0
@@ -5086,7 +5184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diceIndex: 0
-  diceManager: {fileID: 0}
+  diceManager: {fileID: 2045813391}
 --- !u!1 &2043073770
 GameObject:
   m_ObjectHideFlags: 0
@@ -5254,6 +5352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a341cc3b8912d84fb0e55dfa64fed36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyDiceHolder: {fileID: 78606916}
   diceTexts:
   - {fileID: 1487368368}
   - {fileID: 1072983119}
@@ -5269,7 +5368,6 @@ MonoBehaviour:
   - {fileID: 1465001505}
   - {fileID: 1677847209}
   EndTurnButton: {fileID: 1404616317}
-  RollButton: {fileID: 0}
   LockDiceImage: {fileID: 512017984}
   EnemyTurnImage: {fileID: 1591713057}
 --- !u!4 &2045813392

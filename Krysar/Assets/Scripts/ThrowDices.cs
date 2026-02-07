@@ -9,11 +9,12 @@ public class ThrowDices : MonoBehaviour
         Instance = this;
     }//Singleton
 
+    public Animator EnemyDiceHolder;
+
     public TextMeshProUGUI[] diceTexts;
     
     public Button[] diceButtons;
     public Button EndTurnButton;
-    public Button RollButton;
 
     public Image LockDiceImage;
     public Image EnemyTurnImage;
@@ -77,7 +78,7 @@ public class ThrowDices : MonoBehaviour
         diceValues[i] = UnityEngine.Random.Range(1, 7);
         diceTexts[i].text = diceValues[i].ToString();
         
-        diceButtons[i].image.color = new Color(2f, 0.6f, 0.6f, 1f);//at bude trochu vice cervena
+        diceButtons[i].image.color = new Color(2f, 0.5f, 0.5f, 1f);//at bude trochu vice cervena
 
         player.AnatomyScore--;
         player.UpdatePlayerStats();
@@ -122,6 +123,8 @@ public class ThrowDices : MonoBehaviour
         EnemyTurnImage.gameObject.SetActive(true);
         CancelInvoke();
         Invoke(nameof(HideWarning), 3f);
+
+        EnemyDiceHolder.SetTrigger("ShowPanel");//Trigger pro spusteni animaci
     }
     void HideWarning()
     {
