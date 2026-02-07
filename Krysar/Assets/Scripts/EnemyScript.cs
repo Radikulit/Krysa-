@@ -6,11 +6,13 @@ public class EnemyScript : MonoBehaviour
 {
     public TextMeshProUGUI HPCount;
     public TextMeshProUGUI DecreaseHPText;
+    public TextMeshProUGUI[] EnemyResults;
+
     private float enemyHp = 0;
     void Start()
     {
         enemyHp = UnityEngine.Random.Range(10, 16);
-        UpdateHPText(); 
+        UpdateHPText();
     }
     public void TakeDamage(float damage)
     {
@@ -44,4 +46,11 @@ public class EnemyScript : MonoBehaviour
     {
         DecreaseHPText.gameObject.SetActive(false);
     }
+
+    //Tady je logika pro tah soupere
+    public void EnemyRoll()
+    {
+        Debug.Log("Tady hraje souper");
+    }
+
 }

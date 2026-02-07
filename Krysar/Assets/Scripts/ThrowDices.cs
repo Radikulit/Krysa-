@@ -20,6 +20,7 @@ public class ThrowDices : MonoBehaviour
 
     private int[] diceValues = new int[6];
     private bool[] lockedDices = new bool[6];
+    private bool canReroll = false;
     private bool canRoll = true;
     private bool turnActive = false;//zajisti ze po ukonceni tahu kostky odkladat nelze
 
@@ -34,6 +35,7 @@ public class ThrowDices : MonoBehaviour
         }
 
         canRoll = false;
+        canReroll = true;
         turnActive = true;
         EndTurnButton.interactable = true;
         bool canLockAnyDice = false;
@@ -55,6 +57,32 @@ public class ThrowDices : MonoBehaviour
             EndTurn(0);
         }
     }
+    public void Reroll(int i)//Prehod kostek za "anantomicke znalosti"
+    {
+        if (!canReroll)
+        {
+            return;
+        }
+        if (!turnActive)
+        {
+            return;
+        }
+
+        PlayerScript player = GetComponent<PlayerScript>();
+        if (player.AnatomyScore <= 0)
+        {
+            return;
+        }
+
+        diceValues[i] = UnityEngine.Random.Range(1, 7);
+        diceTexts[i].text = diceValues[i].ToString();
+        
+        diceButtons[i].image.color = new Color(2f, 0.6f, 0.6f, 1f);//at bude trochu vice cervena
+
+        player.AnatomyScore--;
+        player.UpdatePlayerStats();
+
+    }
     public void LockNumber(int i)//odloz kostku
     {
         if (!turnActive)
@@ -68,7 +96,7 @@ public class ThrowDices : MonoBehaviour
         }
 
         lockedDices[i] = true;
-        diceButtons[i].image.color = new Color(1, 1, 1, 0.5f);//at bude pruhledna
+        diceButtons[i].image.color = new Color(1, 1, 1, 0.5f);//at bude kostka pruhledna
         canRoll = true;
     }
     public void EndTurn(float damage = 0)
@@ -84,6 +112,7 @@ public class ThrowDices : MonoBehaviour
                 }
             }
         GetComponent<EnemyScript>().TakeDamage(damage);
+        GetComponent<EnemyScript>().EnemyRoll();
 
         System.Array.Clear(lockedDices, 0, lockedDices.Length);
         canRoll = false;
