@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour
 {
+    public Animator RatAnimator;
+
     public TextMeshProUGUI HPCount;
     public TextMeshProUGUI DecreaseHPText;
     public TextMeshProUGUI[] EnemyResults;
@@ -20,13 +22,13 @@ public class EnemyScript : MonoBehaviour
         {
             damage = 0;
             DecreaseHPText.gameObject.SetActive(false);
-
         }
         else
         {
             DecreaseHPText.text = damage.ToString("- 0.0");
             DecreaseHPText.gameObject.SetActive(true);
             Invoke(nameof(HideDamageText), 1f);
+            RatAnimator.SetTrigger("DamageTaken");
         }
 
         enemyHp -= damage;

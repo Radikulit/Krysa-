@@ -5397,6 +5397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b69cd84fa3448c4eb5d7c28079e5b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  RatAnimator: {fileID: 1433311981}
   HPCount: {fileID: 1295926902}
   DecreaseHPText: {fileID: 1799800238}
   EnemyResults:
