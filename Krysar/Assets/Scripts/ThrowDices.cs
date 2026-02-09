@@ -7,7 +7,7 @@ public class ThrowDices : MonoBehaviour
     void Awake()
     {
         Instance = this;
-    }//Singleton
+    }//singleton?
 
     public Animator EnemyDiceHolder;
 
@@ -19,6 +19,7 @@ public class ThrowDices : MonoBehaviour
     public Image LockDiceImage;
     public Image EnemyTurnImage;
 
+    private int combo = 0;
     private int[] diceValues = new int[6];
     private bool[] lockedDices = new bool[6];
     private bool canReroll = false;
@@ -58,7 +59,7 @@ public class ThrowDices : MonoBehaviour
             EndTurn(0);
         }
     }
-    public void Reroll(int i)//Prehod kostek za "anantomicke znalosti"
+    public void Reroll(int i)//prehod kostek za "anantomicke znalosti"
     {
         if (!canReroll)
         {
@@ -99,6 +100,27 @@ public class ThrowDices : MonoBehaviour
         lockedDices[i] = true;
         diceButtons[i].image.color = new Color(1, 1, 1, 0.5f);//at bude kostka pruhledna
         canRoll = true;
+        combo++;
+        if (combo >= 6)
+        {
+            ResolveCombo();
+        }
+    }
+    void ResolveCombo()
+    {
+        Debug.Log("COMBO!");
+
+        combo = 0;
+
+        for (int i = 0; i < lockedDices.Length; i++)
+        {
+            lockedDices[i] = false;
+            diceButtons[i].image.color = new Color(1, 1, 1, 1f); ;
+            diceTexts[i].text = "0";
+        }
+
+        canRoll = true;
+        turnActive = false;
     }
     public void EndTurn(float damage = 0)
     {
@@ -116,6 +138,11 @@ public class ThrowDices : MonoBehaviour
         GetComponent<EnemyScript>().EnemyRoll();
 
         System.Array.Clear(lockedDices, 0, lockedDices.Length);
+        for (int i = 0; i < diceTexts.Length; i++)
+        {
+            diceTexts[i].text = "0";//vynulovani textu kostek
+            diceButtons[i].image.color = new Color(1, 1, 1, 1f);//obycejni barva 
+        }
         canRoll = false;
         turnActive = false;
         EndTurnButton.interactable = false;
@@ -124,7 +151,7 @@ public class ThrowDices : MonoBehaviour
         CancelInvoke();
         Invoke(nameof(HideWarning), 3f);
 
-        EnemyDiceHolder.SetTrigger("ShowPanel");//Trigger pro spusteni animaci
+        EnemyDiceHolder.SetTrigger("ShowPanel");//trigger pro spusteni animaci
     }
     void HideWarning()
     {

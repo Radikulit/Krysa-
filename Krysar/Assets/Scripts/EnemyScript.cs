@@ -16,7 +16,7 @@ public class EnemyScript : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
-        if (damage <= 0)//osetreni pro decreased text
+        if (damage <= 0)//osetreni pro decreased text, at se text nezobrazuje, pod neni potreba
         {
             damage = 0;
             DecreaseHPText.gameObject.SetActive(false);
@@ -34,7 +34,7 @@ public class EnemyScript : MonoBehaviour
         {
             enemyHp = 0;
         }
-
+        damage = 0;
         UpdateHPText();
 
     }
