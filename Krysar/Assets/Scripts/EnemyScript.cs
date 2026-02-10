@@ -32,8 +32,9 @@ public class EnemyScript : MonoBehaviour
         }
 
         enemyHp -= damage;
-        if (enemyHp < 0)//osetreni 
+        if (enemyHp <= 0)//osetreni 
         {
+            RatAnimator.SetTrigger("Death");
             enemyHp = 0;
         }
         damage = 0;

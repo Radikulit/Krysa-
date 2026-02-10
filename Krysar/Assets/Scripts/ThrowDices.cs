@@ -125,6 +125,7 @@ public class ThrowDices : MonoBehaviour
     }
     public void EndTurn(float damage = 0)
     {
+        combo = 0;
 
         for (int i = 0; i < lockedDices.Length; i++)
             if (lockedDices[i])
