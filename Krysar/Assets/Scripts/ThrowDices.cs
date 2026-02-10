@@ -7,7 +7,7 @@ public class ThrowDices : MonoBehaviour
     void Awake()
     {
         Instance = this;
-    }//singleton?
+    }//singleton
 
     public Animator EnemyDiceHolder;
 
@@ -20,6 +20,7 @@ public class ThrowDices : MonoBehaviour
     public Image EnemyTurnImage;
 
     private int combo = 0;
+    //misto pro promennu, ktera bude scitat damage navic
     private int[] diceValues = new int[6];
     private bool[] lockedDices = new bool[6];
     private bool canReroll = false;
