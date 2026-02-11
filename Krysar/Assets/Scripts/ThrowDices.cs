@@ -19,9 +19,9 @@ public class ThrowDices : MonoBehaviour
     public Image LockDiceImage;
     public Image EnemyTurnImage;
 
-    public float overdamage = 0;
-
     private int combo = 0;
+    private float overdamage = 0;
+
     private int[] diceValues = new int[6];
     private bool[] lockedDices = new bool[6];
     private bool canReroll = false;
