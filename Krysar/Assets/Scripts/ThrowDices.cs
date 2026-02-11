@@ -19,8 +19,9 @@ public class ThrowDices : MonoBehaviour
     public Image LockDiceImage;
     public Image EnemyTurnImage;
 
+    public float overdamage = 0;
+
     private int combo = 0;
-    //misto pro promennu, ktera bude scitat damage navic
     private int[] diceValues = new int[6];
     private bool[] lockedDices = new bool[6];
     private bool canReroll = false;
@@ -56,12 +57,17 @@ public class ThrowDices : MonoBehaviour
         }
         if (!canLockAnyDice)
         {
+            overdamage = 0;
             System.Array.Clear(lockedDices, 0, lockedDices.Length);
             EndTurn(0);
         }
     }
     public void Reroll(int i)//prehod kostek za "anantomicke znalosti"
     {
+        if (lockedDices[i])//neprehazuj zamknutou kostku
+        {
+            return;
+        }
         if (!canReroll)
         {
             return;
@@ -88,6 +94,10 @@ public class ThrowDices : MonoBehaviour
     }
     public void LockNumber(int i)//odloz kostku
     {
+        if (lockedDices[i])//nezamikej zamknutou kostku
+        {
+            return;
+        }
         if (!turnActive)
         {
             return;
@@ -109,12 +119,14 @@ public class ThrowDices : MonoBehaviour
     }
     void ResolveCombo()
     {
-        Debug.Log("COMBO!");
-
         combo = 0;
 
         for (int i = 0; i < lockedDices.Length; i++)
         {
+            if (lockedDices[i])
+            {
+                overdamage += diceValues[i] == 1 ? 1f : 0.5f;
+            }
             lockedDices[i] = false;
             diceButtons[i].image.color = new Color(1, 1, 1, 1f); ;
             diceTexts[i].text = "0";
@@ -131,12 +143,9 @@ public class ThrowDices : MonoBehaviour
             if (lockedDices[i])
             {
                 damage += diceValues[i] == 1 ? 1f : 0.5f;
-                if (damage <= 0)
-                {
-                    return;
-                }
             }
-        GetComponent<EnemyScript>().TakeDamage(damage);
+        GetComponent<EnemyScript>().TakeDamage(damage + overdamage);
+        overdamage = 0;
         GetComponent<EnemyScript>().EnemyRoll();
 
         System.Array.Clear(lockedDices, 0, lockedDices.Length);

@@ -13,7 +13,7 @@ public class EnemyScript : MonoBehaviour
     private float enemyHp = 0;
     void Start()
     {
-        enemyHp = UnityEngine.Random.Range(10, 16);
+        enemyHp = UnityEngine.Random.Range(5, 8);
         UpdateHPText();
     }
     public void TakeDamage(float damage)
