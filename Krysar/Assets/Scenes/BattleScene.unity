@@ -6789,6 +6789,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   VisorButton: {fileID: 1915570609}
   DeactivateVisorButton: {fileID: 1513273064}
+  organs:
+  - {fileID: 1712581345}
+  - {fileID: 1690730341}
+  - {fileID: 1122467030}
+  - {fileID: 453964304}
+  - {fileID: 10044631}
   OrganHolder: {fileID: 1656773868}
   visorCursor: {fileID: 2109726797}
   VisorPanel: {fileID: 1570042088}
