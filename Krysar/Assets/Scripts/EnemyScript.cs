@@ -11,6 +11,8 @@ public class EnemyScript : MonoBehaviour
     public TextMeshProUGUI[] EnemyResults;
 
     private float enemyHp = 0;
+    private int[] EnemydiceValues = new int[6];
+    private bool[] EnemylockedDices = new bool[6];
     void Start()
     {
         enemyHp = UnityEngine.Random.Range(10, 16);
