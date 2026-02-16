@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class VisorScript : MonoBehaviour
 {
+    public TextMeshProUGUI VisorText;
+    private int visorCount = 2;
+
     public Button VisorButton;
     public Button DeactivateVisorButton;
 
@@ -17,6 +20,7 @@ public class VisorScript : MonoBehaviour
 
     private void Start()
     {
+        VisorText.text = visorCount.ToString();
         ChooseSickOrgans();
     }
     void Update()
@@ -26,8 +30,7 @@ public class VisorScript : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = Mathf.Abs(Camera.main.transform.position.z);
 
-        visorCursor.transform.position =
-            Camera.main.ScreenToWorldPoint(mousePos);
+        visorCursor.transform.position = Camera.main.ScreenToWorldPoint(mousePos);
     }
 
     public void ChooseSickOrgans()
@@ -51,6 +54,13 @@ public class VisorScript : MonoBehaviour
 
     public void ActivateVisor()
     {
+        if (visorCount <= 0)
+        {
+            return;
+        }
+        visorCount--;
+        VisorText.text = visorCount.ToString();
+
         OrganHolder.SetActive(true);
         visorCursor.SetActive(true);
         VisorPanel.SetActive(true);
