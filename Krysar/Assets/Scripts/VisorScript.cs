@@ -37,7 +37,7 @@ public class VisorScript : MonoBehaviour
     {
         foreach (var organ in organs)
         {
-            organ.SetActive(false);
+            organ.GetComponent<OrganHover>().isSick = false;
         }
 
         int a = Random.Range(0, organs.Length);
@@ -48,8 +48,8 @@ public class VisorScript : MonoBehaviour
             b = Random.Range(0, organs.Length);
         }
 
-        organs[a].SetActive(true);
-        organs[b].SetActive(true);
+        organs[a].GetComponent<OrganHover>().isSick = true;
+        organs[b].GetComponent<OrganHover>().isSick = true;
     }
 
     public void ActivateVisor()
