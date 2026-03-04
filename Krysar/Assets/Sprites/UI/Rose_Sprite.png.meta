@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rose_Sprite_0: -2809866363899189287
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

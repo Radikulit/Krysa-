@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tonic_Sprite_0: 5792262768498193116
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

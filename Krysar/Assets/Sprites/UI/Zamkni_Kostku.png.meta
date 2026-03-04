@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Zamkni_Kostku_0: 6495591696647350573
+      Zamkni_Kostku_1: -4190924055430535278
+      Zamkni_Kostku_2: 9054256563347346123
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

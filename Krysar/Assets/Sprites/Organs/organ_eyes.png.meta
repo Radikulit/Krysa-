@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      organ_eyes_0: -7430851508062275626
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

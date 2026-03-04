@@ -184,7 +184,10 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BloodStain1_0: -6602352328847037813
+      BloodStain1_1: -7123326746276817936
+      BloodStain1_2: -3150804825981254324
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

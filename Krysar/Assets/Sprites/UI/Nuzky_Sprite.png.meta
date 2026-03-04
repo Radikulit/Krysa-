@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Nuzky_Sprite_0: -4912760341448952642
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

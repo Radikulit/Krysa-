@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SquareIconFlip_0: 4659702357945653328
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

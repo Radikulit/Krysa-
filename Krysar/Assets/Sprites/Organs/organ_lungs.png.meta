@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      organ_lungs_0: -1758170917562462905
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
